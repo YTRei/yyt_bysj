@@ -125,46 +125,45 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7">
-                    <form class="signin-inner">
+                    <form class="signin-inner" method="post" action="signup">
                         <div class="row">
+<!--                            <form method="post" action="application/x-www-form-urlencoded">-->
+
                             <div class="col-12">
                                 <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="First Name">
+                                    <input type="text" name="username" placeholder="用 户 名">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="Last Name">
+                                    <input type="text" name="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="Email">
+                                    <input type="password" name="pwd" placeholder="密   码">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="Confirm Password">
+                                    <input type="password" name="pwd" placeholder="重复密码">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="single-checkbox-inner">
                                     <input type="checkbox">
-                                    By clicking "create account".
+                                    同意注册。
                                 </div>
                             </div>
                             <div class="col-12 mb-4">
-                                <button class="btn btn-base-m w-100">Create Account</button>
+<!--                                <button class="btn btn-base-m w-100">注册账户</button>-->
+                                <input type="submit" class="btn btn-base-m w-100" value="注册账户">
                             </div>
                             <div class="col-12">
                                 <span>By creating an account</span>
                                 <a href="signin"><strong>Signin</strong></a>
                             </div>
+<!--                            </form>-->
                         </div>
                     </form>
                 </div>

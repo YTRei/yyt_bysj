@@ -225,7 +225,7 @@
             $.getJSON('data.json', function(data) {
                 $.each(data, function(key, value) {
                     if (value.title.search(expression) != -1) {
-                        $('.datafetch').append('<li class="list-group-item link-class"><a href="video.html?id=' + value.id + '"><img src="' + value.image + '" height="40" width="40" class="img-thumbnail" /> ' + value.title + '</a></li>');
+                        $('.datafetch').append('<li class="list-group-item link-class"><a href="course_video.html?id=' + value.id + '"><img src="' + value.image + '" height="40" width="40" class="img-thumbnail" /> ' + value.title + '</a></li>');
                     }
                     return key < 9;
                 });

@@ -5,12 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Siksha - Online Course HTML template</title>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="static/css/vendor.css">
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/responsive.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .topic-back {
+            text-align: center;
+            background-color: #66ffff;
+        }
+        #main-back {
+            background-color: #66ffff;
+        }
+        #title {
+            font-size: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+            font-size: 20px;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        /* Add a blue text color to links */
+        a {
+            color: dodgerblue;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/statics/scripts/home.js"></script>
 
 </head>
 <body>
@@ -121,132 +230,189 @@
     <!-- page title end --> 
 
     <!-- signin-page-Start --> 
-    <div class="signin-page-area pd-top-120 pd-bottom-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7">
-                    <form class="signin-inner">
-                        <div class="row">
+<!--    <div class="signin-page-area pd-top-120 pd-bottom-120">-->
+<!--        <div class="container">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-xl-6 col-lg-7">-->
+<!--                    <form class="signin-inner">-->
+<!--                        <div class="row">-->
+<!--&lt;!&ndash;                            <div class="col-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="single-input-inner style-bg-border">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="text" placeholder="用户名">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
 <!--                            <div class="col-12">-->
 <!--                                <div class="single-input-inner style-bg-border">-->
-<!--                                    <input type="text" placeholder="用户名">-->
+<!--                                    <input type="text" placeholder="电子邮箱">-->
 <!--                                </div>-->
 <!--                            </div>-->
-                            <div class="col-12">
-                                <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="电子邮箱">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="single-input-inner style-bg-border">
-                                    <input type="text" placeholder="密码">
-                                </div>
-                            </div>
-                            <div class="col-12 mb-4">
-                                <button class="btn btn-base-m w-100">登 录</button>
-                            </div>
-                            <div class="col-12">
-                                <a href="#">未拥有账号？</a>
-                                <a href="signup"><strong> 注册</strong></a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- signin-page-end -->
+<!--                            <div class="col-12">-->
+<!--                                <div class="single-input-inner style-bg-border">-->
+<!--                                    <input type="text" placeholder="密码">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-12 mb-4">-->
+<!--                                <button id="regbtn" type="submit" class="btn btn-base-m w-100" >登 录</button>-->
+<!--&lt;!&ndash;                                <button class="btn btn-base-m w-100">登 录</button>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            <div class="col-12">-->
+<!--                                <a href="#">未拥有账号？</a>-->
+<!--                                <a href="signup"><strong> 注册</strong></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <!-- footer area start -->
-    <footer class="footer-area pd-top-120">
+
+
+    <form method="post" id="regsubmit" action="/userhome" style="width: 500px; margin: 0 auto;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="widget widget_about pr-xl-4">
-                        <div class="thumb">
-                            <img src="static/picture/logo-2.png" alt="img">
-                        </div>
-                        <div class="details">
-                            <p class="mb-3">我们通过免费在线学习平台的理念，推动青少年多方面的发展。</p>
-                            <ul class="social-media-2 mt-3">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">站 点 导 览</h4>
-                        <ul>
-                            <li><a href="">首 页</a></li>
-                            <li><a href="course">课 程</a></li>
-                            <li><a href="blog">讨 论</a></li>
-                            <li><a href="about">关于我们</a></li>
-                            <li><a href="contact">联系我们</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--                <div class="col-lg-2 col-md-6">-->
-                <!--                    <div class="widget widget_nav_menu">-->
-                <!--                        </br>-->
-                <!--                        </br>-->
-                <!--                        <ul>-->
-                <!--                            <li><a href="course">所有课程</a></li>-->
-                <!--                            <li><a href="course">Marketing</a></li>-->
-                <!--                            <li><a href="course">Art</a></li>-->
-                <!--                            <li><a href="course">Designing</a></li>-->
-                <!--                            <li><a href="course">Data Analist</a></li>-->
-                <!--                        </ul>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="widget widget_contact pl-lg-3">
-                        <h4 class="widget-title">联 系 方 式</h4>
-                        <ul class="details">
-                            <li><i class="fa fa-phone"></i> +(010)180 1710 3749</li>
-                            <li><i class="fa fa-envelope"></i> yuanyinteng@163.com</li>
-                            <li><i class="fa fa-map-marker"></i> 天津市宝坻区京津新城祥瑞大街<br>天津财经大学珠江学院 </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 align-self-center">
-                        <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/"></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer area end -->
+            <h1>Register</h1>
+            <hr>
 
-    <!-- back to top area start -->
-    <div class="back-to-top">
-        <span class="back-top"><i class="fa fa-angle-up"></i></span>
-    </div>
-    <!-- back to top area end -->
+            <label for="username"><b>User name</b></label>
+            <input id="username" type="text" placeholder="Enter user name" name="username" required>
+
+            <label for="pwd"><b>Password</b></label>
+            <input id="pwd" type="password" placeholder="Enter Password" name="pwd" required>
+
+            <label for="age"><b>Age</b></label>
+            <input id="age" type="text" placeholder="Enter age" name="age" required>
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
+            <hr>
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <button id="regbtn" type="submit" class="registerbtn" >Register</button>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a id="signinhref" href="#">Sign in</a>.</p>
+        </div>
+    </form>
+
+    <form method="post" id="siginsubmit" action="/userhome" style="width: 500px; margin: 0 auto; display: none;">
+        <div class="container">
+            <h1>Sign In</h1>
+            <hr>
+
+            <label for="email"><b>User name</b></label>
+            <input id="susername" type="text" placeholder="Enter user name" name="username" required>
+
+            <label for="email"><b>Password</b></label>
+            <input id="spwd" type="text" placeholder="Enter password" name="pwd" required>
+
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <button id="siginbtn" type="submit" class="registerbtn" >Sign In</button>
+        </div>
+
+        <div class="container signin">
+            <p>Don't have an account? <a id="registerhref" href="#">Register</a>.</p>
+        </div>
+    </form>
+
+</body>
+</html>
+
+<!-- signin-page-end -->
+
+<!--    &lt;!&ndash; footer area start &ndash;&gt;-->
+<!--    <footer class="footer-area pd-top-120">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="widget widget_about pr-xl-4">-->
+<!--                        <div class="thumb">-->
+<!--                            <img src="static/picture/logo-2.png" alt="img">-->
+<!--                        </div>-->
+<!--                        <div class="details">-->
+<!--                            <p class="mb-3">我们通过免费在线学习平台的理念，推动青少年多方面的发展。</p>-->
+<!--                            <ul class="social-media-2 mt-3">-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <i class="fa fa-facebook"></i>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <i class="fa fa-twitter"></i>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <i class="fa fa-instagram"></i>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <i class="fa fa-linkedin"></i>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-2 col-md-6">-->
+<!--                    <div class="widget widget_nav_menu">-->
+<!--                        <h4 class="widget-title">站 点 导 览</h4>-->
+<!--                        <ul>-->
+<!--                            <li><a href="">首 页</a></li>-->
+<!--                            <li><a href="course">课 程</a></li>-->
+<!--                            <li><a href="blog">讨 论</a></li>-->
+<!--                            <li><a href="about">关于我们</a></li>-->
+<!--                            <li><a href="contact">联系我们</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;                <div class="col-lg-2 col-md-6">&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <div class="widget widget_nav_menu">&ndash;&gt;-->
+<!--                &lt;!&ndash;                        </br>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        </br>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        <ul>&ndash;&gt;-->
+<!--                &lt;!&ndash;                            <li><a href="course">所有课程</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                            <li><a href="course">Marketing</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                            <li><a href="course">Art</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                            <li><a href="course">Designing</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                            <li><a href="course">Data Analist</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        </ul>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="widget widget_contact pl-lg-3">-->
+<!--                        <h4 class="widget-title">联 系 方 式</h4>-->
+<!--                        <ul class="details">-->
+<!--                            <li><i class="fa fa-phone"></i> +(010)180 1710 3749</li>-->
+<!--                            <li><i class="fa fa-envelope"></i> yuanyinteng@163.com</li>-->
+<!--                            <li><i class="fa fa-map-marker"></i> 天津市宝坻区京津新城祥瑞大街<br>天津财经大学珠江学院 </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="footer-bottom">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-12 align-self-center">-->
+<!--                        <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/"></a></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    &lt;!&ndash; footer area end &ndash;&gt;-->
+
+<!--    &lt;!&ndash; back to top area start &ndash;&gt;-->
+<!--    <div class="back-to-top">-->
+<!--        <span class="back-top"><i class="fa fa-angle-up"></i></span>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; back to top area end &ndash;&gt;-->
 
 
     <!-- all plugins here -->

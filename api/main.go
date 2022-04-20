@@ -1,20 +1,64 @@
 package main
 
 import (
+	"bysj_VEDIO/api/session"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
+func Prepare() {
+	session.LoadSessionsFromDB()
+}
+
+//type middleWareHandler struct {
+//	c *gin.Context
+//}
+//
+//func NewMiddleWareHandler(c *gin.Context) gin.HandlerFunc{
+//		m := middleWareHandler{}
+//		m.c = c
+//		return m
+//}
+//
+//func (m middleWareHandler) ServeHTTP(w gin.ResponseWriter, c *gin.Context) {
+//	//check session
+//	ValidateUserSession(c)
+//
+//	m.e.ServeHTTP(w, c.Request)
+//}
+
 func main(){
+	Prepare()
+
 	r := gin.Default()
+
+	//r.Use(NewMiddleWareHandler(r))
+	r.Use(logResponseBody)
+	r.Use(ValidateUserSession)
+
 
 	r.LoadHTMLGlob("tmpl/*")
 	r.Static("/static", "./static")
 	r.Static("/video", "./video")
 
-	r.POST("/signup", func(c *gin.Context) {
-		  
-	})
+	r.POST("/user/:username", Signin())
+
+	r.POST("/user/", Signup())
+
+	r.GET("/user/:username", GetUserInfo())
+
+	r.POST("/user/:username/videos", AddNewVideo())
+
+	r.GET("/user/:username/videos", ListAllVideos())
+
+	r.DELETE("/user/:username/videos/:vid-id", DeleteVideo())
+
+	r.POST("/video/:vid-id/comments", PostComment())
+
+	//r.GET("/video/:vid-id/comments",ShowComments())
+
+
+
 
 
 	r.GET("/about", func(c *gin.Context) {
@@ -50,14 +94,6 @@ func main(){
 
 	r.GET("/no_event", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "no_event.html", nil)
-	})
-
-	r.GET("/signin", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "signin.html", nil)
-	})
-
-	r.GET("/signup", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "signup.html", nil)
 	})
 
 	r.GET("/single-blog", func(c *gin.Context) {
