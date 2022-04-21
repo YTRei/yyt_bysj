@@ -13,7 +13,7 @@ var HEADER_FILED_UNAME = "X-User-Name"
 
 
 func ValidateUserSession(c *gin.Context) {
-	fmt.Println("VVVVVVVVVVVVVV run!!!!!!!")
+	//fmt.Println("VVVVVVVVVVVVVV run!!!!!!!")
 
 		sid := c.Request.Header.Get(HEADER_FILED_SESSION)
 

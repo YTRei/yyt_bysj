@@ -45,7 +45,7 @@ func Signup() gin.HandlerFunc {
 			c.Writer.WriteString(defs.ErrorRequestBodyParseFailed.Error)
 			return
 		}
-		fmt.Println(ubody.Age)
+		//fmt.Println(ubody.Age)
 		age, err := strconv.Atoi(ubody.Age)
 		if err != nil {
 			c.Writer.WriteString("Age not int type.")

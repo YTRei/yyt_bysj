@@ -38,7 +38,7 @@ func testAddUser(t *testing.T) {
 
 func testGetUser(t *testing.T) {
 	pwd, email, age, err := GetUserCredential("Rei")
-	if pwd != "123" || err != nil || email != "66@163.com" || age != 15{
+	if pwd != "123" || err != nil || email != "66@163.com" || age != "15"{
 		t.Errorf("Error of GetUser : %v", err)
 	}
 
@@ -57,7 +57,7 @@ func testRegetUser(t *testing.T) {
 		t.Errorf("Error of ReGetUser : %v", err)
 	}
 
-	if pwd != "" || email != "" || age == 15{
+	if pwd != "" || email != "" || age == "15"{
 		t.Errorf("Deleting user test failed")
 	}
 }

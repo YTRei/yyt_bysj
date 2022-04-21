@@ -17,6 +17,8 @@ create table users (
     id int unsigned not null auto_increment,
     login_name varchar(64),
     pwd text not null,
+    email varchar(64),
+    age int,
     unique key (login_name),
     primary key (id)
 );

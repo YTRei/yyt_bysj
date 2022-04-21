@@ -16,14 +16,17 @@ import (
 func AddUserCredential(loginName string, pwd string, email string, age int) error  {
 	stmtIns, err := dbConn.Prepare("INSERT INTO users (login_name, pwd, email, age) VALUES (?, ?, ?, ?)")
 	if err != nil {
+		fmt.Println("Error 1 : ", err)
 		return err
 	}
 	isSave, _ := UserHadSave(loginName)
 	if !isSave{
+		fmt.Println("Error 2 : ")
 		return nil
 	}
 	_, err = stmtIns.Exec(loginName, pwd, email, age)
 	if err != nil {
+		fmt.Println("Error 3 : ", err)
 		return err
 	}
 	defer stmtIns.Close()
